@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="TimeTrackerModule">
+    <head>
+        <meta charset="UTF-8">
+        <title>AngularJS - Time Tracker</title>
+        <script type="text/javascript" src="scripts/app.js"></script>
+        <link rel="stylesheet" href="css\styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+        <!--<script type="text/javascript" src="controllers/TimeTrackerController.js"></script>-->
+    </head>
+    <body data-ng-controller="TimeTrackerController">
+        <div id="wrap">
+            <!-- top bar -->
+            <div id="header"><h1>Time Tracker</h1></div>
+
+            <!-- area de trabajo -->
+            <div id="workspace">
+                <!-- menu lateral -->
+                <div id="sidebar">
+                    <div>
+                        <h3>Bienvenido: </h3>
+                        <h2>Jose Luis Lopez</h2>
+                        <p>Registra aqui tus actividades diarias.</p>
+                    </div>
+                </div>
+
+                <!-- area de registro -->
+                <div id="main">
+
+                    <!-- titulo -->
+                    <div id="titulo"><h2>Registro de Actividades</h2></div>
+
+                    <!-- registro -->
+                    <div id="registro">
+                        <div id="registro_a"><h2>Ingrese Datos</h2></div>
+                        <div id="registro_b">
+                            <div id="registro_b1">
+                                <form id="frmActivities" name="frmActivities">
+                                    <ul>
+                                        <li>
+                                            <label for="txtFecha">Seleccione Fecha: </label>
+                                            <input data-ng--model="date" data-ng--required="true" id="txtFecha" name="txtFecha" type="date"></input>
+                                        </li>
+                                        <li>
+                                            <label for="txtActividad">Ingrese Actividad: </label>
+                                            <input data-ng--model="date" data-ng--required="true" id="txtActividad" name="txtActividad" type="text"></input>
+                                        </li>
+                                        <li>
+                                            <label style="width: 200px" for="txtDuracion">Duracion: </label>
+                                            <input id="txtDuracion" name="txtDuracion" type="time"></input>
+                                        </li>
+                                    </ul>
+                                </form>
+                            </div>
+                            <div id="registro_b2"><button id="btnRegistrar">Registrar</button></div>
+                        </div>
+                    </div>
+
+                    <!-- listado de tareas -->
+                    <div id="datos">
+                        <div><h2>Historial de Tareas</h2></div>
+                        <div>
+                            <!--<div data-ng--view></div>-->
+                            <!--<div class="gridStyle" data-ng--grid="gridOptions"></div>-->
+                            <div class="gridStyle" data-ng-init="names=[{name:'Jani',country:'Norway'},{name:'Hege',country:'Sweden'},{name:'Kai',country:'Denmark'}]">
+                                <ul>
+                                    <li data-ng-repeat="x	in names">
+                                        {{ x.name + ', ' + x.country }}
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="footer">
+                <p>Powered by Angular JS  </p>
+            </div>
+        </div>
+    </body>
+</html>
